@@ -60,6 +60,19 @@ time you open a new terminal window.
 
 #### Manual Install (w/o Anaconda)
 
+
+<b> Note:</b> To install python-rtmidi, the ALSA library development must first be installed. To install in Ubuntu/Debian, use
+```sudo apt-get install libasound2-dev```
+To fix build failure for python-rtmidi, install the following dependencies (in order):
+```sudo apt-get install libjack0
+sudo apt-get install libjack-dev
+sudo apt-get install libjack-jackd2-0
+sudo apt-get install jack
+sudo apt-get install libjack-dev
+pip install python-rtmidi```
+
+(There is a clash between libjack-dev and libjack-jackd2-dev, so it may be suitable to install one or the other instead of reinstalling libjack-dev after the other pkg installations. After following the above steps, ```pip install magenta``` should be successful!)
+
 If the automated script fails for any reason, or you'd prefer to install by
 hand, do the following steps.
 
